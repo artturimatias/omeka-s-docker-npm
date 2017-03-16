@@ -1,7 +1,8 @@
 # omeka-s-docker-npm
-Docker setup for omeka-s based on https://github.com/boredland/omeka-s-docker. The database (mysql) is also created and is running in a separate container.
 
+Setup for quickly testing [omeka-s](http://omeka.org/s/). Everything needed is installed (modules, themese, database). The database (mysql) is created as a a separate container. 
 
+This is based on https://github.com/boredland/omeka-s-docker. 
 
 ## Usage
 
@@ -22,5 +23,8 @@ Docker setup for omeka-s based on https://github.com/boredland/omeka-s-docker. T
 
         make build 
         make run
-        
-The default port is 8000 so you can acces omeka-s in: http://localhost:8000.You can change that in Makefile.
+
+5. Browse to http://localhost:8080 and you should see a user registration form.
+
+
+The default port is 8080 but you can change that in Makefile.

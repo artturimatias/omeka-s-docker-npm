@@ -8,7 +8,7 @@ build:
 	docker build -t docker/omeka-s .
 
 run:
-	docker run -d --name omeka-s -p 8000:80 --link mysql_omeka:db docker/omeka-s
+	docker run -d --name omeka-s -p 8080:80 --link mysql_omeka:db docker/omeka-s
 
 stop:
 	docker stop $(CONT)
@@ -34,4 +34,4 @@ clean:
 
 
 
-.PHONY: build run run_mysql restart bash clean
+.PHONY: build run stop remove run_mysql restart bash clean

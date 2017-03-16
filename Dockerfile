@@ -1,5 +1,6 @@
 FROM php:apache
-MAINTAINER Jonas Strassel <jo.strassel@gmail.com>
+MAINTAINER Ari Häyrinen <ari.hayrinen@gmail.com>
+# based on: https://github.com/boredland/omeka-s-docker
 
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
 
@@ -19,6 +20,7 @@ RUN apt-get update && \
     imagemagick \
     vim \
     nodejs
+
 # Install php-extensions
 RUN docker-php-ext-install -j$(nproc) iconv mcrypt \
     pdo pdo_mysql gd
