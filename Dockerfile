@@ -42,10 +42,10 @@ RUN npm install && npm install --global gulp-cli
 RUN gulp init
 
 # Clone all the Omeka-S Modules
-RUN cd /var/www/html/modules && curl "https://api.github.com/users/omeka-s-modules/repos?page=$PAGE&per_page=100" | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 git clone
+RUN cd /var/www/html/modules && curl "https://api.github.com/users/omeka-s-modules/repos?page=$PAGE&per_page=100" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
 
 # Clone all the Omeka-S Themes
-RUN cd /var/www/html/themes && rm -r default && curl "https://api.github.com/users/omeka-s-themes/repos?page=$PAGE&per_page=100" | grep -e 'git_url*' | cut -d \" -f 4 | xargs -L1 git clone
+RUN cd /var/www/html/themes && rm -r default && curl "https://api.github.com/users/omeka-s-themes/repos?page=$PAGE&per_page=100" | grep -e 'clone_url*' | cut -d \" -f 4 | xargs -L1 git clone
 
 # copy over the database and the apache config
 COPY ./files/database.ini /var/www/html/config/database.ini
