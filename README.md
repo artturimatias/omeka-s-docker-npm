@@ -16,6 +16,7 @@ This is based on https://github.com/boredland/omeka-s-docker.
         git clone https://github.com/omeka/omeka-s
 
 3. Create container network and database
+
         make create_network
         make run_mysql
 
